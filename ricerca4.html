@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>jQuery Mobile Docs - Filtered Lists</title> 
+	 
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+  <script src="codiqa.ext.js"></script> 
+</head> 
+<body> 
+
+	<div data-role="page" class="type-interior">
+
+		<div data-role="header" data-theme="a">
+		
+		<a data-role="button" id="home" data-icon="home" data-iconpos="left"
+        class="ui-btn-left">Home
+        </a>
+		
+		<h1>Risparmy</h1>
+		<!--a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a-->
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div class="content-primary">	
+			<ul data-role="listview" data-filter="true" id="searchListUl">
+			 
+			<script>
+			     //elencoArticoli();
+				 //alert("Debug1");
+				 var db = openDatabase ("spesar", "1.0", "spesar", 65535);
+				  db.transaction (function (transaction) 
+						  {
+							var sql = "SELECT * FROM spesa order by articolo";
+							transaction.executeSql (sql, undefined, 
+							function (transaction, result)
+							{
+							  var html = "<ul>";
+							 // alert(result.rows.length);
+							  
+							  if (result.rows.length)
+							  {
+								for (var i = 0; i < result.rows.length; i++) 
+								{
+								  var row = result.rows.item (i);
+								  var articolo = row.articolo;
+								  var luogo = row.luogo;
+								    var prezzo = row.prezzo;
+									var data = row.data;
+								  var id = row.id;
+								  
+								 // javascript:document.location.href = "./modifica.html";
+								//  html = "<li><a href=\"modifica.html?id=" + id +"\">   " + articolo + " " + id + "</a></li>";
+                                  // html = "<li><a href=\"modifica.html"  + "?id=" + id + "\" >"  + articolo + " " + id + "</a></li>";
+								 
+								//  html = "<li><a href=\"modifica.html\"  >"  + articolo + " ( "  + prezzo + " ) "  + "</a></li>";
+								   html = "<li><a href=\"#\" onClick=\"vaiPagina(" + id + ")\" >"  + articolo + " ( "  + prezzo + " ) "  + "</a></li>";
+								 
+								 //  html = "<li><a href=\"modifica.html\" onClick=\"sessionStorage.id=" + id + ";\" >"  + articolo + " ( "  + prezzo + " ) "  + "</a></li>";
+								 //<a href="item.html" onClick="sessionStorage.id=1898432">Item 1898432</a>
+								// alert(html);
+								 $("#searchListUl").append(html);
+								 $("#searchListUl").listview('refresh');
+								  
+								  //alert(html);
+								  
+								}
+							  }
+						  });
+						  });
+				
+			</script>
+			</ul>
+			</div><!--/content-primary -->		
+
+
+		</div><!-- /content -->
+
+
+
+		</div><!-- /page -->
+
+		</body>
+		</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  
+  
+  
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+<script src="codiqa.ext.js"></script>   
+
+  <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
+  <script src="jQuery.ui.datepicker.js"></script>
+  <script src="jquery.ui.datepicker.mobile.js"></script>
+
+<!-- DateBox Inizio-->
+
+
+    <!-- link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" /-->
+	<link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" /> 
+	<!-- link type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" rel="stylesheet" /--> 
+	<link type="text/css" href="http://dev.jtsage.com/jQM-DateBox2/css/demos.css" rel="stylesheet" /> 
+	
+	<!-- NOTE: Script load order is significant! -->
+	
+	<!-- script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script> 
+	<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script-->
+	<script type="text/javascript" src="http://dev.jtsage.com/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.datebox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.durationbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.durationflipbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.slidebox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.customflip.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.custombox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+	
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.js"></script>
+	<script type="text/javascript" src="demos/extras.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/gpretty/prettify.js"></script>
+	<link type="text/css" href="http://dev.jtsage.com/gpretty/prettify.css" rel="stylesheet" />
+	
+<!-- DateBox Fine-->	
+	
+
+
+<!--script src="database.js"></script-->   
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="page1">
+
+    <div data-theme="a" data-role="header">
+        <a data-role="button" id="home" data-icon="home" data-iconpos="left"
+        class="ui-btn-left">Home
+        </a>
+		
+        <h2>
+           Risparmy
+        </h2>
+    </div>
+    <div data-role="content">
+            <div data-role="fieldcontain">
+                <label for="articolo">
+                    Articolo
+                </label>
+                <input name="" id="articolo" placeholder="" value="" type="text">
+            </div>
+            <div data-role="fieldcontain">
+                <label for="luogo">
+                    Luogo
+                </label>
+                <input name="" id="luogo" placeholder="" value="" type="text">
+            </div>
+            <div data-role="fieldcontain">
+                <label for="data">
+                    Data 
+                </label>
+                <!--input name="" id="data" placeholder="" value="" type="date"-->
+				
+				<input name="mode1" id="data" type="text" data-role="datebox"  data-options='{"mode": "calbox", "overrideDateFormat":"%d/%m/%Y"}'  />
+			
+				
+            </div>
+            <div data-role="fieldcontain">
+                <label for="prezzo">
+                    Prezzo
+                </label>
+                <input name="" id="prezzo" placeholder="" value="" type="number">
+            </div>
+			<a data-role="button" id="insertDB" data-icon="check"> Salva</a>
+            <!--input type="submit" data-theme="b" id="inserisci" value="Inserisci"-->
+    </div>
+</div>
+</body>
+</html>
